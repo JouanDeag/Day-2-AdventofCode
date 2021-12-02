@@ -1,19 +1,19 @@
 const fs = require('fs');
-const input = fs.readFileSync('./input.txt', 'utf-8');
 var array = [];
 var horizontal = 0;
 var vertical = 0;
-var instructions = input.split('\r\n');
 var aim = 0;
+
+// CONFIGURATION
 const stage = 1;
+const input = fs.readFileSync('./input.txt', 'utf-8');
+var instructions = input.split('\r\n');
 
-
-// console.log(instructions[0]);
+// Converting input into usable data
 instructions.forEach(element => {
     instructions = element.split(' ');
     array.push(instructions)
 });
-// console.log(array);
 
 // Stage 1
 
@@ -30,7 +30,6 @@ function instr(array, aim) {
     
 }
 
-
 function move(direction, value) {
     if (direction == 'up') {
         vertical = vertical-parseInt(value);
@@ -46,6 +45,7 @@ console.log('Horizontal: ' + horizontal);
 console.log('Vertical: ' + vertical);
 console.log('Sum: ' + horizontal*vertical);
 
+// Stage 2
 
 function movetwo(array) {
     var aim = 0;
